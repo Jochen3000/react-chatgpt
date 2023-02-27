@@ -11,9 +11,11 @@
   bottom: 0;
   left: 0;
 }
+
 header {
   display: none;
 }
+
 header h1 {
   font-weight: 400;
   font-size: 16px;
@@ -21,10 +23,12 @@ header h1 {
   color: #d9d9e3;
   margin: auto;
 }
+
 .menu button {
   background: none;
   border: none;
 }
+
 nav {
   display: none;
   background-color: #4c4f5f;
@@ -35,18 +39,21 @@ nav {
   left: 0;
   z-index: 999;
 }
+
 .navItems {
   padding: 8px;
   background-color: #212122;
   width: 100%;
   max-width: 340px;
 }
+
 .navPromptWrapper {
   border-bottom: 1px solid #ffffff33;
   padding: 10px;
   height: 55vh;
   overflow-y: auto;
 }
+
 .navPrompt {
   display: flex;
   align-items: center;
@@ -55,6 +62,7 @@ nav {
   margin: 5px 0;
   text-align: left;
 }
+
 .navPrompt p {
   font-size: 14px;
   line-height: 20px;
@@ -70,38 +78,45 @@ nav {
   animation: fadeInChar 1s ease-in forwards;
   opacity: 0;
 }
+
 #botMessage pre {
   margin: 0;
   padding: 0;
   text-indent: 0;
   white-space: pre-wrap;
   position: relative;
-  top: -45px;
 }
+
 pre {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 @keyframes fadeInChar {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .navCloseIcon {
   width: 20%;
   margin: 10px;
 }
+
 nav svg {
   float: left;
 }
+
 .sideMenu {
   width: 244px;
   padding: 8px;
   background-color: #202022;
 }
+
 .sideMenuButton {
   border: 1px solid hsl(0deg 0% 100% / 20%);
   border-radius: 5px;
@@ -113,17 +128,20 @@ nav svg {
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
 }
+
 .navPrompt:hover,
 .sideMenuButton:hover {
   cursor: pointer;
   background-color: hsla(240, 9%, 59%, 0.1);
 }
+
 .sideMenuButton span {
   font-size: 20px;
   font-weight: 500;
   padding-left: 6px;
   padding-right: 10px;
 }
+
 .chatBox {
   flex: 1;
   background-color: #353540;
@@ -132,31 +150,38 @@ nav svg {
   color: #d1d5db;
   font-size: 16px;
 }
+
 #introsection::before,
 #introsection::after {
   content: "<HomePage/>";
   float: left;
   color: rgb(0, 134, 244);
 }
+
 #introsection {
   text-align: left;
   padding: 20px;
 }
+
 #introsection h1 {
   padding-top: 20px;
   line-height: 33px;
 }
+
 #introsection h2 {
   font-size: 16px;
   font-weight: 400;
 }
+
 #introsection ul {
   list-style-type: square;
 }
+
 #introsection pre {
   margin: 0;
   display: inline;
 }
+
 .chatLogWrapper {
   height: 80vh;
   overflow-y: auto;
@@ -167,6 +192,7 @@ nav svg {
   width: 8px;
   background-color: #575969;
 }
+
 ::-webkit-scrollbar-thumb {
   background-clip: content-box;
   border-color: transparent;
@@ -179,6 +205,7 @@ nav svg {
   width: 8px;
   background-color: #575969;
 }
+
 ::-moz-scrollbar-thumb {
   background-clip: content-box;
   border-color: transparent;
@@ -201,10 +228,12 @@ nav svg {
 .userSVG {
   transform: scale(0.6);
 }
+
 .botMessageMainContainer {
   width: 100%;
   background-color: #444654;
 }
+
 .botMessageWrapper {
   max-width: 800px;
   margin: auto;
@@ -225,6 +254,7 @@ nav svg {
 .openaiSVG {
   transform: scale(0.5);
 }
+
 #avatar {
   display: flex;
   align-items: center;
@@ -244,6 +274,7 @@ nav svg {
   position: relative;
   padding-top: 20px;
 }
+
 .inputPrompttTextarea {
   width: 80%;
   max-height: 200px;
@@ -270,6 +301,7 @@ nav svg {
   .App {
     display: block;
   }
+
   header {
     display: flex;
     align-items: center;
@@ -277,40 +309,51 @@ nav svg {
     border-bottom: 1px solid hsl(0deg 0% 100% / 20%);
     padding: 4px 0 0 12px;
   }
+
   nav {
     display: flex;
   }
+
   .sideMenu {
     display: none;
   }
+
   .chatBox {
     position: static;
   }
+
   .chatPromptWrapper {
     padding: 12px;
   }
+
   .botMessageWrapper {
     padding: 12px;
   }
+
   .userSVG {
     transform: scale(0.5);
   }
+
   .openaiSVG {
     transform: scale(0.4);
   }
+
   #avatar {
     width: 30px;
     height: 30px;
   }
+
   #introsection {
     padding: 20px 20px 40px 20px;
     font-size: 14px;
   }
+
   #introsection h1,
   pre {
     font-size: 25px;
     white-space: pre-wrap;
   }
+
   #introsection h2 {
     font-size: 14px;
   }
