@@ -21,17 +21,20 @@ function App() {
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
     async function callAPI() {
       try {
-        const response = await fetch("http://localhost:5000/test", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: inputPrompt }),
-        });
+        const response = await fetch(
+          "https://flask-openai.onrender.com/query",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: inputPrompt }),
+          }
+        );
         const data = await response.json();
         setChatLog([
           ...chatLog,
           {
             chatPrompt: inputPrompt,
-            botMessage: data.botResponse,
+            botMessage: data.answer,
           },
         ]);
         setErr(false);
