@@ -348,8 +348,7 @@ nav svg {
     font-size: 14px;
   }
 
-  #introsection h1,
-  pre {
+  #introsection h1 {
     font-size: 25px;
     white-space: pre-wrap;
   }
