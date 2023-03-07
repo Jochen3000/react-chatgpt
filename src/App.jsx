@@ -11,6 +11,7 @@ import BotResponse from "./components/BotResponse";
 import IntroSection from "./components/IntroSection";
 
 function App() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [showMenu, setShowMenu] = useState(false);
   const [inputPrompt, setInputPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
@@ -21,20 +22,20 @@ function App() {
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
     async function callAPI() {
       try {
-        const response = await fetch(
-          "https://flask-openai.onrender.com/query",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question: inputPrompt }),
-          }
-        );
+        const response = await fetch(apiUrl + "/query", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chatPrompt: inputPrompt,
+            filename: "all-files.csv",
+          }),
+        });
         const data = await response.json();
         setChatLog([
           ...chatLog,
           {
             chatPrompt: inputPrompt,
-            botMessage: data.answer,
+            botMessage: data.botResponse,
           },
         ]);
         setErr(false);
@@ -46,7 +47,6 @@ function App() {
     setInputPrompt("");
   };
 
-  console.log(chatLog[0]);
   return (
     <div className="App">
       <aside className="sideMenu">
