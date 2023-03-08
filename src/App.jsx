@@ -22,7 +22,7 @@ function App() {
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
     async function callAPI() {
       try {
-        const response = await fetch(apiUrl + "/query", {
+        const response = await fetch(apiUrl + "/query-doku", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
