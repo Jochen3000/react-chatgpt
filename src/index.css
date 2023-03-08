@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* some styling for logos */
+.logo-container {
+  position: absolute;
+  bottom: 20px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  margin-right: 12px;
+}
