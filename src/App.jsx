@@ -1,6 +1,6 @@
 import "./normal.css";
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Avatar from "./components/Avatar";
 import NewChat from "./components/NewChat";
 import NavPrompt from "./components/NavPrompt";
@@ -16,6 +16,10 @@ function App() {
   const [inputPrompt, setInputPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
+
+  useEffect(() => {
+    document.title = "Beta Chatbot - podojo";
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
