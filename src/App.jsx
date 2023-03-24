@@ -30,8 +30,7 @@ function App() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            chatPrompt:
-              inputPrompt + " Respond in the language of the question",
+            chatPrompt: inputPrompt,
             filename: "all-files.csv",
           }),
         });
