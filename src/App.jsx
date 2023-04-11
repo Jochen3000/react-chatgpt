@@ -31,6 +31,7 @@ function App() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             chatPrompt: inputPrompt,
+            conversationHistory: chatLog,
             filename: "all-files.csv",
           }),
         });
