@@ -1,20 +1,38 @@
+// import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import MyUploads from "../components/upload/MyUploads";
-import UploadBasic from "../components/upload/UploadBasic";
+import MyUploadsVector from "../components/upload/MyUploadsVector";
+import UploadExpert from "../components/upload/UploadExpert";
+import "../assets/css/dashboard.css";
+// import LoginButton from "../components/LoginButton";
 
-export default function Upload() {
+export default function Manage() {
   const [myUploadsUpdateKey, setMyUploadsUpdateKey] = useState(0);
+  // const { user, isAuthenticated, isLoading } = useAuth0();
+  const [documents, setDocuments] = useState([]);
 
+  const isDocumentIdDuplicate = (documentId) => {
+    return documents.some((document) => document.id === documentId);
+  };
+
+  // if (!isAuthenticated) {
+  //   return (
+  //     <div className="login-message">
+  //       <p>Zur Nutzung der Funktionen bitte anmelden.</p>
+  //       <LoginButton />
+  //     </div>
+  //   );
+  // }
   return (
     <div className="view-analyze">
       <div className="grid-row-40-60">
         <div className="big-text-full">
           <div className="big-card-text">
-            <div className="text-headline">Interview Upload</div>
+            <div className="text-headline">Index verwalten</div>
             <div className="text-card-body">
-              <UploadBasic
-                email={user.email}
+              <UploadExpert
+                email="info@podojo.com"
                 setMyUploadsUpdateKey={setMyUploadsUpdateKey}
+                isDocumentIdDuplicate={isDocumentIdDuplicate}
               />
             </div>
           </div>
@@ -22,20 +40,11 @@ export default function Upload() {
         <div className="bg-img-card">
           <div className="bg-card-text">
             <div className="bg-img-text-inner">
-              <div className="text-headline white">Meine Interviews</div>
+              <div className="text-headline white">Index verwalten</div>
               <div className="text-card-body white">
                 <p>
-                  Hier können Text- und Audio-Dateien hochgeladen und verwaltet
-                  werden.
-                </p>
-                <p>
-                  Die Applikation unterstützt .txt und verschiedene Audioformate
-                  wie mp3, wav, mpeg, webm etc. Audio-Dateien werden automatisch
-                  in Text umgewandelt.
-                </p>
-                <p>
-                  In der Dateiverwaltung können die hochgeladenen Dateien
-                  bearbeitet oder gelöscht werden.
+                  Hier können Dateien in unterschiedlichen Formaten (pdf, txt,
+                  doc, ppt) in die Vektordatenbank geladen werden.
                 </p>
               </div>
             </div>
@@ -44,9 +53,11 @@ export default function Upload() {
       </div>
       <div className="grid-row-100">
         <div className="big-text-full">
-          <MyUploads
-            email={user.email}
+          <MyUploadsVector
             myUploadsUpdateKey={myUploadsUpdateKey}
+            collectionName="metadata"
+            documents={documents}
+            setDocuments={setDocuments}
           />
         </div>
       </div>
