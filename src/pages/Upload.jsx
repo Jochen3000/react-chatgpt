@@ -24,7 +24,7 @@ export default function Manage() {
   // }
   return (
     <div className="view-analyze">
-      <div className="grid-row-40-60">
+      <div className="grid-row-100">
         <div className="big-text-full">
           <div className="big-card-text">
             <div className="text-headline">Index verwalten</div>
@@ -34,19 +34,6 @@ export default function Manage() {
                 setMyUploadsUpdateKey={setMyUploadsUpdateKey}
                 isDocumentIdDuplicate={isDocumentIdDuplicate}
               />
-            </div>
-          </div>
-        </div>
-        <div className="bg-img-card">
-          <div className="bg-card-text">
-            <div className="bg-img-text-inner">
-              <div className="text-headline white">Index verwalten</div>
-              <div className="text-card-body white">
-                <p>
-                  Hier können Dateien in unterschiedlichen Formaten (pdf, txt,
-                  doc, ppt) in die Vektordatenbank geladen werden.
-                </p>
-              </div>
             </div>
           </div>
         </div>

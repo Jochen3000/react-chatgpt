@@ -13,15 +13,13 @@ function App() {
 
   return (
     <div className="page-container wf-section">
-      <div className="w-layout-grid page-grid">
-        <div className="main">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Bot />} />
-              <Route path="/upload" element={<Upload />} />
-            </Routes>
-          </BrowserRouter>
-        </div>
+      <div className="main">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Bot />} />
+            <Route path="/upload" element={<Upload />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   );
