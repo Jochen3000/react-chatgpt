@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function MyUploadsVector({
   myUploadsUpdateKey,
+  databaseName,
   collectionName,
   documents,
   setDocuments,
@@ -12,7 +13,7 @@ function MyUploadsVector({
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(apiUrl + "/view-uploads/" + collectionName)
+    fetch(apiUrl + "/view-uploads/" + databaseName + "/" + collectionName)
       .then((response) => response.json())
       .then((data) => {
         const sortedData = data.sort((a, b) => {
@@ -38,6 +39,7 @@ function MyUploadsVector({
       body: JSON.stringify({
         filter: {
           document_id: entryId,
+          source: collectionName, // Assuming 'source' is the 'collectionName'
         },
       }),
     })

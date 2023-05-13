@@ -65,7 +65,7 @@ function UploadExpert({ email, setMyUploadsUpdateKey, isDocumentIdDuplicate }) {
       formData.append("document_id", documentId);
       formData.append("author", email);
       formData.append("timestamp", new Date().toISOString());
-      formData.append("source", "userresearch_db");
+      formData.append("source", "podoku_db");
 
       setUploading(true);
       fetch(apiUrl + "/upsert-file", {

@@ -42,7 +42,8 @@ export default function Manage() {
         <div className="big-text-full">
           <MyUploadsVector
             myUploadsUpdateKey={myUploadsUpdateKey}
-            collectionName="metadata"
+            databaseName="podojo_metadata"
+            collectionName="doku"
             documents={documents}
             setDocuments={setDocuments}
           />
