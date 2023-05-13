@@ -65,7 +65,7 @@ function MyUploadsVector({
   return (
     <div className="big-text-card">
       <div className="big-card-text">
-        <div className="text-headline">Dateien in Vector DB</div>
+        <div className="text-headline">Dokumente in Podojo Doku DB</div>
         <div className="text-card-body">
           {isLoading && (
             <div className="loading-indicator">

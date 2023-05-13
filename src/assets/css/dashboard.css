@@ -1,3 +1,12 @@
+.page-container {
+  background-color: black;
+  color: white;
+}
+
+p {
+  color: grey;
+}
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -39,8 +48,6 @@
   justify-content: space-between;
   grid-column-gap: 8px;
   border-radius: 16px;
-  background-color: #fff;
-  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
 }
 
 .big-text-full {
@@ -48,8 +55,6 @@
   padding: 24px;
   grid-column-gap: 8px;
   border-radius: 16px;
-  background-color: #fff;
-  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
 }
 
 .counter-card-img {
@@ -187,7 +192,6 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -199,7 +203,7 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #a5a5a5;
 }
 
 .form-control {
@@ -240,7 +244,8 @@ input::file-selector-button {
 }
 
 .text-input {
-  padding: 12px;
+  padding: 12px 2%;
+  width: 96%;
 }
 
 .uploading-status {
@@ -284,7 +289,7 @@ input::file-selector-button {
 }
 
 .entry-row:hover {
-  background-color: #f5f5f5;
+  background-color: #6c6b6b;
 }
 
 .trash-icon {
@@ -317,4 +322,10 @@ input::file-selector-button {
   padding: 8px 16px;
   border: none;
   cursor: pointer;
+}
+
+.text-headline {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
