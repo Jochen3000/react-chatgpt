@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-function UploadExpert({ email, setMyUploadsUpdateKey, isDocumentIdDuplicate }) {
+function UploadExpert({
+  email,
+  setMyUploadsUpdateKey,
+  isDocumentIdDuplicate,
+  databaseName,
+  collectionName,
+}) {
   const apiUrl = import.meta.env.VITE_UPSERT_API_URL;
   const [file, setFile] = useState(null);
   const [documentId, setDocumentId] = useState("");
@@ -65,8 +71,8 @@ function UploadExpert({ email, setMyUploadsUpdateKey, isDocumentIdDuplicate }) {
       formData.append("document_id", documentId);
       formData.append("author", email);
       formData.append("timestamp", new Date().toISOString());
-      formData.append("source", "podoku_db");
-
+      formData.append("source", collectionName);
+      formData.append("database", databaseName);
       setUploading(true);
       fetch(apiUrl + "/upsert-file", {
         method: "POST",

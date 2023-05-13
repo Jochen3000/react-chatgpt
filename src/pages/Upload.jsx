@@ -30,6 +30,8 @@ export default function Manage() {
             <div className="text-headline">Index verwalten</div>
             <div className="text-card-body">
               <UploadExpert
+                databaseName="podojo_metadata"
+                collectionName="doku"
                 email="info@podojo.com"
                 setMyUploadsUpdateKey={setMyUploadsUpdateKey}
                 isDocumentIdDuplicate={isDocumentIdDuplicate}
