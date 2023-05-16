@@ -71,7 +71,7 @@ function MyUploadsVector({
         <div className="text-card-body">
           {isLoading && (
             <div className="loading-indicator">
-              <img src="/images/loading.gif" alt="Loading..." />
+              <img src="/images/loading.gif" width="30px" alt="Loading..." />
             </div>
           )}
           {documents.map((document) => (

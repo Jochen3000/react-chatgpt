@@ -104,7 +104,7 @@ function UploadExpert({
         <div className="uploading-status">
           <div className="uploading-message">Uploading in progress...</div>
           <div className="loading-indicator">
-            <img src="/images/loading.gif" alt="Loading..." />
+            <img src="/images/loading.gif" width="30px" alt="Loading..." />
           </div>
         </div>
       )}
