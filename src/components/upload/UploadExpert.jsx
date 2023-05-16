@@ -147,7 +147,7 @@ function UploadExpert({
               onChange={handleFileChange}
             />
             {errors.file && <p>Please select a file.</p>}
-            {errors.fileSize && <p>File size must be less than 500KB.</p>}
+            {errors.fileSize && <p>File size must be less than 1MB.</p>}
             {errors.fileExtension && <p>File must be a .txt file.</p>}
           </div>
           <button type="submit" className="submit-button">

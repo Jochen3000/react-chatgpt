@@ -21,13 +21,12 @@ function Bot() {
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
     async function callAPI() {
       try {
-        const response = await fetch(apiUrl + "/query-doku", {
+        const response = await fetch(apiUrl + "/query-pinecone", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             chatPrompt: inputPrompt,
-            conversationHistory: chatLog,
-            filename: "all-files.csv",
+            source: "doku",
           }),
         });
         const data = await response.json();
