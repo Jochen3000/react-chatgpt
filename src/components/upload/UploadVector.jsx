@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function UploadExpert({
+function UploadVector({
   email,
   setMyUploadsUpdateKey,
   isDocumentIdDuplicate,
@@ -158,4 +158,4 @@ function UploadExpert({
     </div>
   );
 }
-export default UploadExpert;
+export default UploadVector;
