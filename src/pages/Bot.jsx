@@ -11,6 +11,7 @@ function Bot() {
   const [inputPrompt, setInputPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
   const [err, setErr] = useState(false);
+  const [user_id] = useState(`user_${Date.now()}`);
 
   useEffect(() => {
     document.title = "Beta Chatbot - podojo";
@@ -18,30 +19,41 @@ function Bot() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Immediately add the user's message to the chat log
     setChatLog([...chatLog, { chatPrompt: inputPrompt }]);
+
     async function callAPI() {
       try {
         const response = await fetch(apiUrl + "/query-pinecone", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            user_id: user_id,
             chatPrompt: inputPrompt,
             source: "doku",
           }),
         });
         const data = await response.json();
-        setChatLog([
-          ...chatLog,
-          {
-            chatPrompt: inputPrompt,
+
+        // Update the latest chat log entry with the bot's response when it's available
+        setChatLog((prevChatLog) => {
+          const updatedChatLog = [...prevChatLog];
+          const lastLogIndex = updatedChatLog.length - 1;
+
+          updatedChatLog[lastLogIndex] = {
+            ...updatedChatLog[lastLogIndex],
             botMessage: data.botResponse,
-          },
-        ]);
+          };
+
+          return updatedChatLog;
+        });
         setErr(false);
       } catch (err) {
         setErr(err);
       }
     }
+
     callAPI();
     setInputPrompt("");
   };
